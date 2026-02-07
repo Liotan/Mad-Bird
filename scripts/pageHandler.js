@@ -26,7 +26,7 @@ switchToStateFromURLHash = () => {
             pageHTML += renderScore();
             break;
         case 'Rules':
-            pageHTML += renderRules();
+            pageHTML += renderControls();
             break;
     }
     document.getElementById('IPage').innerHTML = pageHTML;
@@ -45,7 +45,7 @@ switchToMainPage = () => {
 }
 
 switchToGamePage = () => {
-    switchToState({
+     switchToState({
         pageName: 'Game'
     });
 

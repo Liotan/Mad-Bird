@@ -61,6 +61,7 @@ class Game {
         })
 
         this.canvas.addEventListener("touchmove", (e) => {
+            e.preventDefault();
             if (e.changedTouches[0].pageX - this.touchStartX > this.swipeDistance) {
                 this.player.startCharge();
             }
@@ -82,7 +83,7 @@ class Game {
         this.minSpeed = this.speed;
         this.maxSpeed = this.speed * 4;
         this.obstacles = [];
-        this.numberOfObstacles = 50;
+        this.numberOfObstacles = 10;
         this.background.resize();
         this.player.resize();
         this.createObstacles();
@@ -152,18 +153,19 @@ class Game {
         this.ctx.fillText('Timer : ' + this.formatTimer(), 10, 30);
         if (this.gameOver) {
             if (this.player.collided) {
-                this.message1 = "You Loser";
-                this.message2 = "";
-            } else if (this.obstacles.length > 0) {
-                this.message1 = "Game Over, Winnable";
-                this.message2 = "";
+                this.message1 = "You Loser!";
+                this.message2 = "Try better next time.";
+            } else if (this.obstacles.length === 0) {
+                this.message1 = "Winnable, i guess...";
+                this.message2 = "Try to do it faster!";
             }
 
             this.ctx.textAlign = "center";
-            this.ctx.font = "30px Chewy";
-            this.ctx.fillText('Game Over: ', this.width * 0.5, this.height * 0.5 - 40);
+            this.ctx.font = "35px Chewy";
+            this.ctx.fillText(this.message1, this.width * 0.5, this.height * 0.5 - 40);
             this.ctx.font = "15px Chewy";
-            this.ctx.fillText(this.message1, this.width * 0.5, this.height * 0.5 - 20);
+            this.ctx.fillText(this.message2, this.width * 0.5, this.height * 0.5 - 20);
+            this.ctx.font = "20px Chewy";
             this.ctx.fillText('Press "R" to try again!', this.width * 0.5, this.height * 0.5);
         }
 
