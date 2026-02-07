@@ -29,18 +29,21 @@ class Obstacle {
                 this.markedForDeletion = true;
                 this.game.obstacles = this.game.obstacles.filter(obstacle => !obstacle.markedForDeletion);
                 this.game.score++;
-                if (this.game.obstacles.length <= 0) {this.game.gameOver = true;}
+                if (this.game.obstacles.length <= 0) {
+                    this.game.gameOver = true;
+                    this.game.sound.play(this.game.sound.win);
+                }
             }
         } else {
             this.speedY += 0.1;
         }
 
-
-
         if (this.game.checkCollision(this, this.game.player)) {
             this.game.gameOver = true;
             this.game.player.collided = true;
             this.game.player.stopCharge();
+            this.game.player.speedY += 0.5;
+            this.game.sound.play(this.game.sound.lose);
         }
     }
 

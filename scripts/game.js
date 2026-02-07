@@ -82,7 +82,7 @@ class Game {
         this.minSpeed = this.speed;
         this.maxSpeed = this.speed * 4;
         this.obstacles = [];
-        this.numberOfObstacles = 30;
+        this.numberOfObstacles = 50;
         this.background.resize();
         this.player.resize();
         this.createObstacles();
@@ -158,6 +158,7 @@ class Game {
                 this.message1 = "Game Over, Winnable";
                 this.message2 = "";
             }
+
             this.ctx.textAlign = "center";
             this.ctx.font = "30px Chewy";
             this.ctx.fillText('Game Over: ', this.width * 0.5, this.height * 0.5 - 40);

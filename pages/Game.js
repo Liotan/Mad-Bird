@@ -7,27 +7,12 @@ function renderGame() {
                 <img id="waterBall" src="../media/waterBall.png" alt="">
                 <audio id="jump" src="../media/wings.mp3"></audio>
                 <audio id="charge" src="../media/charge.mp3"></audio>
+                <audio id="win" src="../media/win.mp3"></audio>
+                <audio id="lose" src="../media/lose.mp3"></audio>
+                <audio id="music" src="../media/background.mp3"></audio>
             </div>
             
-        <script> 
-    const canvas = document.getElementById('canvas');
-    const ctx = canvas.getContext('2d');
-    canvas.width = 960;
-    canvas.height = 960;
-    
-    const game = new Game(canvas, ctx);
-
-    let lastTime = 0;
-    let animate = (timeStamp) => {
-        const delta = timeStamp - lastTime;
-        lastTime = timeStamp;
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        game.render(delta);
-        requestAnimationFrame(animate);
-    }
-
-    animate(0);
-    canvas.scrollIntoView();</script>
+   
             `
 }
 

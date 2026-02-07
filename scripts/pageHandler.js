@@ -49,6 +49,25 @@ switchToGamePage = () => {
         pageName: 'Game'
     });
 
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = 960;
+    canvas.height = 960;
+
+    const game = new Game(canvas, ctx);
+
+    let lastTime = 0;
+    let animate = (timeStamp) => {
+        const delta = timeStamp - lastTime;
+        lastTime = timeStamp;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        game.render(delta);
+        requestAnimationFrame(animate);
+    }
+
+    animate(0);
+    canvas.scrollIntoView();
+    game.sound.play(game.sound.music);
 }
 
 switchToScorePage = () => {
