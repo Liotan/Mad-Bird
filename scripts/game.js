@@ -83,7 +83,7 @@ class Game {
         this.minSpeed = this.speed;
         this.maxSpeed = this.speed * 4;
         this.obstacles = [];
-        this.numberOfObstacles = 10;
+        this.numberOfObstacles = 40;
         this.background.resize();
         this.player.resize();
         this.createObstacles();
@@ -152,7 +152,7 @@ class Game {
         this.ctx.textAlign = "left";
         this.ctx.fillText('Timer : ' + this.formatTimer(), 10, 30);
         if (this.gameOver) {
-            if (this.player.collided) {
+            if (this.player.collided || this.player.isTouchingBottom()) {
                 this.message1 = "You Loser!";
                 this.message2 = "Try better next time.";
             } else if (this.obstacles.length === 0) {

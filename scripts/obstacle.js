@@ -10,7 +10,7 @@ class Obstacle {
         this.collisionX;
         this.collisionY;
         this.collisionRadius = this.scaledWidth * 0.5;
-        this.speedY = Math.random() < 0.5 ? -1 * this.game.ratio : 1 * this.game.ratio;
+        this.speedY = Math.random() < 0.5 ? -4 * this.game.ratio : 4 * this.game.ratio;
         this.markedForDeletion = false;
         this.image = document.getElementById("waterBall");
         this.frameX = Math.floor(Math.random() * 12);
