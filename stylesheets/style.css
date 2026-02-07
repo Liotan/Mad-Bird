@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Chewy", system-ui;
+}
+
+body {
+    background: #8c7895;
+}
+
+canvas {
+    position: absolute;
+    top: 150px;
+    left: 0;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: snow;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.media {
+    display: none;
+}
+
+input {
+    font-size: 20px;
+    padding: 10px;
+    margin-right: 10px;
+    font-family: "Comic Sans MS", cursive;
+    background-color: lightskyblue;
+    color: darkslateblue;
+    border-radius: 8px;
+    border: none;
+}
+
+input:hover {
+    background-color: darkslateblue;
+    color: snow;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+input:active {
+    background-color: darkslateblue;
+    color: lightskyblue;
+}
