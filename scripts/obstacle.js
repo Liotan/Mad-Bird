@@ -42,7 +42,7 @@ class Obstacle {
             this.game.gameOver = true;
             this.game.player.collided = true;
             this.game.player.stopCharge();
-            this.game.player.speedY += 0.5;
+            this.game.player.speedY += 1.5 * this.game.ratio;
             this.game.sound.play(this.game.sound.lose);
         }
     }

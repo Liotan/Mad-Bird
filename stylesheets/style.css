@@ -63,7 +63,7 @@ input:active {
     color: darkslateblue;
     max-width: 500px;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
     font-size: 20px;
     line-height: 2;
 }
@@ -98,4 +98,20 @@ span {
     .main p {
         font-size: 20px;
     }
+}
+
+.score {
+    text-align: center;
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+ul {
+    margin-top: 30px;
+    padding-top: 30px;
+    list-style: none;
+    background-color: snow;
+    border-radius: 10px;
+    color: darkslateblue;
+    font-size: 20px;
 }

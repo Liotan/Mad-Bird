@@ -52,7 +52,7 @@ class Player {
         this.speedY = -4 * this.game.ratio;
         this.jumpSpeed = 5 * this.game.ratio;
         this.collisionRadius = 45 * this.game.ratio;
-        this.collisionX = this.x + this.width * 0.3;
+        this.collisionX = this.x + this.width * 0.4;
         this.collided = false;
         this.chargeBar = Math.floor(5 * this.game.ratio);
         this.wingsIdle();

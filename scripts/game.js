@@ -152,6 +152,8 @@ class Game {
         this.ctx.textAlign = "left";
         this.ctx.fillText('Timer : ' + this.formatTimer(), 10, 30);
         if (this.gameOver) {
+            myStorage.setItem("score", this.score);
+            myStorage.setItem("time", this.formatTimer());
             if (this.player.collided || this.player.isTouchingBottom()) {
                 this.message1 = "You Loser!";
                 this.message2 = "Try better next time.";
